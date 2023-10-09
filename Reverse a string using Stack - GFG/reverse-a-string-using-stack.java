@@ -20,14 +20,18 @@ class GFG {
 
 class Solution {
     
-    public String reverse(String S){
+    public String reverse(String s){
         //code here
+        Stack<Character>stack=new Stack<>();
+        for(int i=0;i<s.length();i++){
+            stack.push(s.charAt(i));
+        }
         String str="";
-        int len=S.length();
-        for(int i=len-1;i>=0;i--){
-            str+=S.charAt(i);
+        for(int i=0;i<s.length();i++){
+            str+=stack.pop();
         }
         return str;
+        
     }
 
 }
