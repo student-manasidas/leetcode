@@ -54,27 +54,29 @@ class MyStack
     void push(int a) 
     {
         // Add your code here
-       StackNode n=new StackNode(a);
-       if(top==null){
-           top=n;
-           return;
-       }
-        n.next=top;
-           top=n;
+        StackNode newnode=new StackNode(a);
+        if(top==null){
+            top=newnode;
+            return ;
+        }
+        newnode.next=top;
+        top=newnode;
     }
     
     //Function to remove an item from top of the stack.
     int pop() 
     {
         // Add your code here
+        
         if(top!=null){
-            int deleteval =top.data;
-            top=top.next;
-            return deleteval;
+          int deleteval=top.data;
+          top=top.next;
+          return deleteval;
         }
         else{
             return -1;
         }
+        
         
     }
 }
