@@ -59,7 +59,7 @@ class Compute {
         }
         for(var k:map1.entrySet()){
             long key=k.getKey();
-            if(!map.containsKey(key) || map.get(key)<k.getValue()){
+            if(!map.containsKey(key) || map.get(key)<k.getValue() ){
                 return "No";
             }
         }
