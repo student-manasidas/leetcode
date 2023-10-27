@@ -121,16 +121,31 @@ class Solution
         Stack<Node> stack = new Stack<>();
         Node current = root;
 
-        while (current != null || !stack.isEmpty()) {
-            while (current != null) {
-                stack.push(current);
-                current = current.left;
-            }
-            current=stack.pop();
-            result.add(current.data);
-            current = current.right;
-        }
+        // while (current != null || !stack.isEmpty()) {
+        //     while (current != null) {
+        //         stack.push(current);
+        //         current = current.left;
+        //     }
+        //     current=stack.pop();
+        //     result.add(current.data);
+        //     current = current.right;
+        // }
 
+        // return result;
+        while(true){
+            if(current!=null){
+                stack.push(current);
+                current=current.left;
+            }
+            else{
+                if(stack.isEmpty()){
+                    break;
+                }
+                current=stack.pop();
+                result.add(current.data);
+                current=current.right;
+            }
+        }
         return result;
     }
     
