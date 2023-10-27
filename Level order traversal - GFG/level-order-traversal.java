@@ -133,26 +133,19 @@ class Solution
         // Create Queue data structure
         Queue<Node>queue=new LinkedList<>();
         ArrayList<Integer>ans=new ArrayList<>();
-        // Store node into the Queue data structure
         queue.offer(node);
-        // Queue is not empty Simply traverse while loop
         while(!queue.isEmpty()){
-            // Find out length 
             int level=queue.size();
-             // Initialize the node into the newnode
-             // traverse node one by one
-             for(int i=0;i<level;i++){
-             Node newnode=queue.poll();
-             // Store into ans list
-             ans.add(newnode.data);
-             
-             if(newnode.left!=null){
-                queue.offer(newnode.left); 
-             }
-             if(newnode.right!=null){
-                 queue.offer(newnode.right);
-             }
-             }
+            for(int i=0;i<level;i++){
+                Node newnode=queue.poll();
+                ans.add(newnode.data);
+                if(newnode.left!=null){
+                    queue.offer(newnode.left);
+                }
+                if(newnode.right!=null){
+                    queue.offer(newnode.right);
+                }
+            }
         }
         return ans;
     }
