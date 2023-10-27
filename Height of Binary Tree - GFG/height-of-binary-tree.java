@@ -126,10 +126,9 @@ class Solution {
         if(root==null){
             return 0;
         }
-        // code here 
         int lh=height(root.left);
-        int rh=height(root.right);
-        int maxi=Math.max(lh,rh)+1;
+        int lr=height(root.right);
+        int maxi=Math.max(lh,lr)+1;
         return maxi;
         
     }
