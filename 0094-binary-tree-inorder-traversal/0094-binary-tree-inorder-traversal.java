@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
-    List<Integer>ans=new ArrayList<>();
+    ArrayList<Integer>ans=new ArrayList<>();
     private void inorder(TreeNode root){
         if(root==null){
             return ;
