@@ -82,8 +82,8 @@ class BinaryTree
         if(root==null){
             return 0;
         }
-        int ls=sumBT(root.left);
-        int rs=sumBT(root.right);
-        return ls+rs+root.data;
+        int leftsum=sumBT(root.left);
+        int rightsum=sumBT(root.right);
+        return leftsum+rightsum+root.data;
     }
 }
