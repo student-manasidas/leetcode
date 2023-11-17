@@ -19,19 +19,22 @@ class Solution {
         if(root==null){
             return ans;
         }
-        Queue<TreeNode> q=new LinkedList<>();
-        q.add(root);
-        while(q.size()>0){
-            int size=q.size();
-            List<Integer>level=new ArrayList<>();
+        Queue<TreeNode> que=new ArrayDeque<>();
+        que.add(root);
+        while(que.size()>0){
+            int size=que.size();
+            ArrayList<Integer>list=new ArrayList<>();
             for(int i=0;i<size;i++){
-                TreeNode temp=q.peek();
-                q.remove();
-                level.add(temp.val);
-                if(temp.left!=null) q.add(temp.left);
-                if(temp.right!=null)q.add(temp.right);
+                TreeNode nroot=que.remove();
+                list.add(nroot.val);
+                if(nroot.left!=null){
+                    que.add(nroot.left);
+                }
+                if(nroot.right!=null){
+                    que.add(nroot.right);
+                }
             }
-            ans.add(level);
+            ans.add(list);
         }
         return ans;
     }
