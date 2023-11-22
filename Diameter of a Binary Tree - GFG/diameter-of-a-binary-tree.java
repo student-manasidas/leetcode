@@ -121,10 +121,10 @@ class Solution {
         if(root==null){
             return 0;
         }
-        int lh=height(root.left,diameter);
-        int rh=height(root.right,diameter);
-        diameter[0]=Math.max(diameter[0],lh+rh);
-        return 1+Math.max(lh,rh);
+        int leftheight=height(root.left,diameter);
+        int rightheight=height(root.right,diameter);
+        diameter[0]=Math.max(diameter[0],leftheight+rightheight);
+        return Math.max(leftheight,rightheight)+1;
     }
     int diameter(Node root) {
         // Your code here
